@@ -26,12 +26,28 @@ public class RsvpService {
         return rsvpRepo.saveRsvp(rsvp);
     }
 
-    public Boolean updateRsvp(Rsvp rsvp){
-        return rsvpRepo.updateRsvp(rsvp);
+    public Boolean updateRsvp(Rsvp rsvp, Integer id){
+        return rsvpRepo.updateRsvp(rsvp, id);
     }
 
     public int countRsvp(){
         return rsvpRepo.countRsvp();
+    }
+
+    public boolean batchSaveRsvp(List<Rsvp> rsvps){
+        int[] results = rsvpRepo.batchSaveRsvp(rsvps);
+
+        for (int result : results){
+            if (result != 1){
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public Rsvp findById(int id){
+        return rsvpRepo.findById(id);
     }
 
 }

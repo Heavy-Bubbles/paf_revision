@@ -10,7 +10,6 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.client.HttpServerErrorException.InternalServerError;
 
 import sg.edu.nus.iss.workshop21.exception.ResourceNotFoundException;
 import sg.edu.nus.iss.workshop21.model.Customer;
