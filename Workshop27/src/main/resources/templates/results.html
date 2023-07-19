@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+</head>
+<body data-th-object="${result}">
+    <h5>Offset: <span data-th-text="*{offset}"></span>, Limit: <span data-th-text="*{limit}"></span>, Total: <span data-th-text="*{total}"></span>, Timestamp: <span data-th-text="*{timestamp}"></span></h5>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id:</th>
+                <th>Name:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-th-each="g : *{games}" data-th-object="${g}">
+                <td>
+                    <span data-th-text="*{game_id}"></span>
+                </td>
+                <td>
+                    <a data-th-href="@{/games/{id}(id=*{game_id})}" data-th-text="*{name}"></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
